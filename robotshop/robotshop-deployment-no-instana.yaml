@@ -27,12 +27,6 @@ spec:
       containers:
       - name: cart
         image: robotshop/rs-cart:latest
-        # agent networking access
-        #env:
-        #  - name: INSTANA_AGENT_HOST
-        #    valueFrom:
-        #      fieldRef:
-        #        fieldPath: status.hostIP
         ports:
         - containerPort: 8080
         resources:
@@ -76,11 +70,6 @@ spec:
       containers:
       - name: catalogue
         image: robotshop/rs-catalogue:latest
-        env:
-          - name: INSTANA_AGENT_HOST
-            valueFrom:
-              fieldRef:
-                fieldPath: status.hostIP
         ports:
         - containerPort: 8080
         resources:
@@ -127,12 +116,6 @@ spec:
       containers:
       - name: dispatch
         image: robotshop/rs-dispatch:latest
-        env:
-          # agent networking access
-          - name: INSTANA_AGENT_HOST
-            valueFrom:
-              fieldRef:
-                fieldPath: status.hostIP
         resources:
           limits:
             cpu: 200m
@@ -220,16 +203,10 @@ spec:
     metadata:
       labels:
         service: mysql
-      annotations:
-        sidecar.istio.io/inject: "false"
     spec:
       containers:
       - name: mysql
         image: robotshop/rs-mysql-db:latest
-        # added for Istio
-        securityContext:
-          capabilities:
-            add: ["NET_ADMIN"]
         ports:
         - containerPort: 3306
         resources:
@@ -279,12 +256,6 @@ spec:
       containers:
       - name: payment
         image: robotshop/rs-payment:latest
-        # agent networking access
-        env:
-          - name: INSTANA_AGENT_HOST
-            valueFrom:
-              fieldRef:
-                fieldPath: status.hostIP
         ports:
         - containerPort: 8080
         resources:
@@ -478,7 +449,6 @@ spec:
         image: robotshop/rs-shipping:latest
         ports:
         - containerPort: 8080
-        # it's Java it needs lots of memory
         resources:
           limits:
             cpu: 200m
@@ -523,12 +493,6 @@ spec:
       containers:
       - name: user
         image: robotshop/rs-user:latest
-        env:
-          # agent networking access
-          - name: INSTANA_AGENT_HOST
-            valueFrom:
-              fieldRef:
-                fieldPath: status.hostIP
         ports:
         - containerPort: 8080
         resources:
