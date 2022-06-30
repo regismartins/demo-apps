@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+---
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -112,17 +112,17 @@ spec:
       securityContext:
         fsGroup: 1000
         runAsGroup: 1000
-        runAsNonRoot: true
+        runAsNonRoot: false
         runAsUser: 1000
       containers:
       - name: server
         securityContext:
-          allowPrivilegeEscalation: false
+          allowPrivilegeEscalation: true
           capabilities:
             drop:
               - all
-          privileged: false
-          readOnlyRootFilesystem: true
+          privileged: true
+          readOnlyRootFilesystem: false
         image: gcr.io/google-samples/microservices-demo/cartservice:v0.3.8
         ports:
         - containerPort: 7070
