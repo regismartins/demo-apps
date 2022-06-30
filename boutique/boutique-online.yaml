@@ -51,7 +51,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: adservice
+        image: gcr.io/google-samples/microservices-demo/adservice
         ports:
         - containerPort: 9555
         env:
@@ -123,7 +123,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: cartservice
+        image: gcr.io/google-samples/microservices-demo/cartservice
         ports:
         - containerPort: 7070
         env:
@@ -189,7 +189,7 @@ spec:
                 - all
             privileged: false
             readOnlyRootFilesystem: true
-          image: checkoutservice
+          image: gcr.io/google-samples/microservices-demo/checkoutservice
           ports:
           - containerPort: 5050
           readinessProbe:
@@ -271,7 +271,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: currencyservice
+        image: gcr.io/google-samples/microservices-demo/currencyservice
         ports:
         - name: grpc
           containerPort: 7000
@@ -342,7 +342,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: emailservice
+        image: gcr.io/google-samples/microservices-demo/emailservice
         ports:
         - containerPort: 8080
         env:
@@ -413,7 +413,7 @@ spec:
                 - all
             privileged: false
             readOnlyRootFilesystem: true
-          image: frontend
+          image: gcr.io/google-samples/microservices-demo/frontend
           ports:
           - containerPort: 8080
           readinessProbe:
@@ -545,7 +545,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: loadgenerator
+        image: gcr.io/google-samples/microservices-demo/loadgenerator
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"
@@ -589,7 +589,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: paymentservice
+        image: gcr.io/google-samples/microservices-demo/paymentservice
         ports:
         - containerPort: 50051
         env:
@@ -659,7 +659,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: productcatalogservice
+        image: gcr.io/google-samples/microservices-demo/productcatalogservice
         ports:
         - containerPort: 3550
         env:
@@ -729,7 +729,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: recommendationservice
+        image: gcr.io/google-samples/microservices-demo/recommendationservice
         ports:
         - containerPort: 8080
         readinessProbe:
@@ -848,7 +848,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: shippingservice
+      app: gcr.io/google-samples/microservices-demo/shippingservice
   template:
     metadata:
       labels:
@@ -869,7 +869,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: shippingservice
+        image: gcr.io/google-samples/microservices-demo/shippingservice
         ports:
         - containerPort: 50051
         env:
