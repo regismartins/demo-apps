@@ -15,8 +15,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: boutique-online
-  namespace: boutique-online
+  name: onlineboutique
   labels:
     compliance: pci-dss
     environment: production
@@ -25,7 +24,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: adservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   selector:
     matchLabels:
@@ -83,7 +82,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: adservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   type: ClusterIP
   selector:
@@ -97,7 +96,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cartservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   selector:
     matchLabels:
@@ -150,7 +149,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: cartservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   type: ClusterIP
   selector:
@@ -164,7 +163,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: checkoutservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   selector:
     matchLabels:
@@ -231,7 +230,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: checkoutservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   type: ClusterIP
   selector:
@@ -245,7 +244,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: currencyservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   selector:
     matchLabels:
@@ -302,7 +301,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: currencyservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   type: ClusterIP
   selector:
@@ -316,7 +315,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: emailservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   selector:
     matchLabels:
@@ -372,7 +371,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: emailservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   type: ClusterIP
   selector:
@@ -386,7 +385,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   selector:
     matchLabels:
@@ -450,9 +449,9 @@ spec:
           - name: AD_SERVICE_ADDR
             value: "adservice:9555"
           # # ENV_PLATFORM: One of: local, gcp, aws, azure, onprem, alibaba
-          # # When not set, defaults to "local" unless running in GKE, otherwies auto-sets to gcp 
+          # # When not set, defaults to "local" unless running in GKE, otherwise auto-sets to gcp 
           - name: ENV_PLATFORM 
-            value: "azure"
+            value: "local"
           - name: DISABLE_TRACING
             value: "0"
           - name: DISABLE_PROFILER
@@ -471,7 +470,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   type: ClusterIP
   selector:
@@ -485,7 +484,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend-external
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   type: LoadBalancer
   selector:
@@ -499,7 +498,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: loadgenerator
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   selector:
     matchLabels:
@@ -563,7 +562,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: paymentservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   selector:
     matchLabels:
@@ -619,7 +618,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: paymentservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   type: ClusterIP
   selector:
@@ -633,7 +632,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: productcatalogservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   selector:
     matchLabels:
@@ -689,7 +688,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: productcatalogservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   type: ClusterIP
   selector:
@@ -703,7 +702,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: recommendationservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   selector:
     matchLabels:
@@ -763,7 +762,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: recommendationservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   type: ClusterIP
   selector:
@@ -777,7 +776,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-cart
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   selector:
     matchLabels:
@@ -830,7 +829,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: redis-cart
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   type: ClusterIP
   selector:
@@ -844,7 +843,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shippingservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   selector:
     matchLabels:
@@ -900,7 +899,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: shippingservice
-  namespace: boutique-online
+  namespace: onlineboutique
 spec:
   type: ClusterIP
   selector:

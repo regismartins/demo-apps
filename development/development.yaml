@@ -2,7 +2,7 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: dev
+  name: development
   labels:
     compliance: open
     environment: development
@@ -10,38 +10,39 @@ metadata:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: centos
-  namespace: dev
+  name: sdkserver
+  namespace: development
   labels:
-    app: centos
+    app: sdkserver
 spec:
   containers:
-  - name: centos
-    image: centos:latest
-    command: [ "/bin/bash", "-c", "--" ]
-    args: [ "while true; do curl -m3 http://nginx-svc; sleep 3; done;" ]
+  - name: sdkserver
+    image: alpine:latest
+    command: [ "/bin/sh", "-c", "--" ]
+    args: [ "while true; do wget -O- -T3 http://webserver; sleep 3; done;" ]
     resources: {}
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dev-nginx
-  namespace: dev
+  name: dev-webserver
+  namespace: development
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: webserver
       security: strict
   replicas: 2
   template:
     metadata:
       labels:
-        app: nginx
+        app: webserver
         security: strict
     spec:
       containers:
-      - name: nginx
-        image: nginx
+      - name: webserver
+        image: regisftm/webserver:latest 
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         resources: {}
@@ -49,15 +50,16 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-svc
-  namespace: dev
+  name: webserver
+  namespace: development
   labels:
-    service: nginx
+    service: webserver
 spec:
+  type: LoadBalancer
   ports:
-  - port: 80
+  - name: http
+    port: 80
     targetPort: 80
     protocol: TCP
   selector:
-    app: nginx
-EOF
+    app: webserver
