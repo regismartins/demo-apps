@@ -560,7 +560,7 @@ metadata:
 spec:
   ports:
   - name: http
-    port: 8080
+    port: 80
     targetPort: 8080
   selector:
     service: web
@@ -587,13 +587,13 @@ spec:
       - name: load
         env:
           - name: HOST
-            value: "http://web:8080/"
+            value: "http://web/"
           - name: NUM_CLIENTS
             value: "15"
           - name: SILENT
             value: "0"
           - name: ERROR
-            value: "1"
+            value: "0"
         image: robotshop/rs-load:latest
         resources:
           limits:
