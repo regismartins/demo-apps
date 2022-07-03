@@ -14,6 +14,10 @@ The **sdkserver** is a pod created with the alpine image and the **webserver**, 
 The **webserver service** is a LoadBalancer exposing the port 80 and will distribute the HTTP requests across the 2 webserver replicas created by the **webserver deployment**.
 The **sdkserve** microservice will issue a HTTP GET request using wget to the **webserver service** every 3 seconds.
 
+The diagram below shows the objects of the simple development environment.
+
+
+
 To deploy this demo application follow the steps below:
 
 1. **Have a kubernetes cluster up and running with sufficient capacity** to support this application. :)
