@@ -1,7 +1,7 @@
 # Microservices Demo Applications
 [![Tigera][tigera.io-badge]][tigera.io] 
 
-This repository brings an all-in-one-yaml files to deploy some of the most popular microservices applications used for demo purposes.
+This repository brings an **all-in-one-yaml** files to deploy some of the most popular microservices applications used for demo purposes.
 
 ## Simple Development Environment
 
@@ -10,9 +10,9 @@ Simple development environment is a very basic deployment using only 2 microserv
 - webserver
 
 The simple development enviroment application will create the **development** namespace for its deployment.
-The sdkserver is a pod created with the alpine image and the webserver, well, this is a web server and uses a custom image based on nginx:alpine. 
-The webserver service is a LoadBalancer exposing the port 80 and will distribute the HTTP requests across the 2 webserver replicas created by the webserver deployment.
-The sdkserver will issue a HTTP GET request using wget to the webserver service every 3 seconds.
+The **sdkserver** is a pod created with the alpine image and the **webserver**, well, this is a web server and uses a custom image based on nginx:alpine. 
+The **webserver service** is a LoadBalancer exposing the port 80 and will distribute the HTTP requests across the 2 webserver replicas created by the **webserver deployment**.
+The **sdkserve** microservice will issue a HTTP GET request using wget to the **webserver service** every 3 seconds.
 
 To deploy this demo application follow the steps below:
 
@@ -54,10 +54,12 @@ kubectl get -n developmente service webserver | awk '{print $4}'
 
 **Example output - do not copy**
 
+```bash
 EXTERNAL-IP
 <your-ip>
+```
 
-**Note**-  you may see `<pending>` while the cloud provides provisions the load balancer. If this happens, wait a few minutes and re-run the command.
+**Note**-  you may see `<pending>` while the cloud provider provisions the load balancer. If this happens, wait a few minutes and re-run the command.
 
 [Optional] **Clean up**:
 
