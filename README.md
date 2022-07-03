@@ -53,7 +53,7 @@ sdkserver                        1/1     Running   0          44m
 5. **Access the webserver in a browser** using the webserver's EXTERNAL_IP.
 
 ```bash
-kubectl get -n developmente service webserver | awk '{print $4}'
+kubectl get -n development service webserver | awk '{print $4}'
 ``` 
 
 **Example output - do not copy**
