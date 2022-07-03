@@ -1,4 +1,4 @@
-# Popular Microservices Demo Application using Terraform
+# Microservices Demo Applications
 [![Tigera][tigera.io-badge]][tigera.io] 
 
 This repository brings an all-in-one-yaml files to deploy some of the most popular micro-services applications used for demo purposes.
