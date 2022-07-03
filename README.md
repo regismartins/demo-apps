@@ -1,7 +1,7 @@
 # Microservices Demo Applications
 [![Tigera][tigera.io-badge]][tigera.io] 
 
-This repository brings an all-in-one-yaml files to deploy some of the most popular micro-services applications used for demo purposes.
+This repository brings an all-in-one-yaml files to deploy some of the most popular microservices applications used for demo purposes.
 
 ## Simple Development Environment
 
@@ -9,7 +9,7 @@ Simple development environment is a very basic deployment using only 2 microserv
 - sdkserver
 - webserver
 
-The simple development enviroment application will create a the --development-- namespace for its the deployment.
+The simple development enviroment application will create the **development** namespace for its the deployment.
 The sdkserver is a pod created with the alpine image and the webserver, well, this is a web server and uses a custom image based on nginx:alpine. 
 The webserver service is a LoadBalancer exposing the port 80 and will distribute the HTTP requests across the 2 webserver replicas created by the webserver deployment.
 The sdkserver will issue a HTTP GET request using wget to the webserver service every 3 seconds.
