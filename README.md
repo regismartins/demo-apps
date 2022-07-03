@@ -16,7 +16,7 @@ The **sdkserve** microservice will issue a HTTP GET request using wget to the **
 
 The diagram below shows the objects of the simple development environment.
 
-
+![development](https://user-images.githubusercontent.com/104035488/177042841-b7688f6e-0758-4b9b-be13-e527bc4f499f.png)
 
 To deploy this demo application follow the steps below:
 
