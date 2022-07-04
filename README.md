@@ -10,6 +10,8 @@ This repository brings **all-in-one-yaml** files to deploy some of the most popu
 > - [**Online Boutique**](README.md#online-boutique)
 > - [**Robot Shop**](README.md#robot-shop)
 
+---
+
 ## Quickstart
 
 You can deploy the application right away, even without cloning this repository:
@@ -254,6 +256,7 @@ EXTERNAL-IP
 kubectl delete -f onlineboutique.yaml
 ```
 
+---
 <!-- ### Robotshop ### -->
 
 
