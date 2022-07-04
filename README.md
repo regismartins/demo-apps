@@ -33,6 +33,7 @@ kubectl apply -f https://raw.githubusercontent.com/regismartins/demo-apps/main/o
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/regismartins/demo-apps/main/robotshop/robotshop.yaml
 ```
+--- 
 
 ## Simple Development Environment
 
@@ -104,7 +105,7 @@ kubectl delete -f development.yaml
 
 And finally, in the webserver_image folder, you can find the Dockerfile and the index.html used to create the image for the webserver microservice.
 
-
+--- 
 <!-- ### Yet Another On-line Bank ### -->
 
 
@@ -177,6 +178,7 @@ EXTERNAL-IP
 kubectl delete -f yaobank.yaml
 ```
 
+---
 <!-- ### Online Boutique ### -->
 
 
