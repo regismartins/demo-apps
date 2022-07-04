@@ -119,7 +119,7 @@ All the Kubernetes resources (Deployments, Pods, Services, Service Accounts, etc
 
 The diagram below shows the objects of the simple development environment.
 
-
+![yaobank](https://user-images.githubusercontent.com/104035488/177184583-a2a73b00-a235-495a-aede-52f43e5fea94.png)
 
 To deploy this demo application follow the steps below:
 
