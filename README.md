@@ -10,7 +10,7 @@ This repository brings **all-in-one-yaml** files to deploy some of the most popu
 
 ## Quickstart
 
-You can deploy the application right away, without clonning this repository:
+You can deploy the application right away, even without cloning this repository:
 
 **Simple Development Environment**
 ```bash
@@ -117,7 +117,7 @@ This is an example of a three-tier architecture software application. The yaoban
 
 All the Kubernetes resources (Deployments, Pods, Services, Service Accounts, etc.) for yaobank will all be created within the **yaobank namespace**. The **customer service** is a LoadBalancer exposing the port 80 and will forward the HTTP requests to the **customer** pod created by **customer deployment**.
 
-The diagram below shows the objects of the simple development environment.
+The diagram below shows the objects of the yet another online bank environment.
 
 ![yaobank](https://user-images.githubusercontent.com/104035488/177184583-a2a73b00-a235-495a-aede-52f43e5fea94.png)
 
@@ -180,10 +180,77 @@ kubectl delete -f yaobank.yaml
 
 ## Online Boutique
 
+**Online Boutique** is a cloud-native microservices demo application. Online Boutique consists of a 11-tier microservices application. The application is a web-based e-commerce app where users can browse items, add them to the cart, and purchase them.
+
+You can find more information at the offical project [github repository](https://github.com/GoogleCloudPlatform/microservices-demo).
+
+The diagram below shows the objects of the yet another online bank environment.
 
 
 
-<!-- ### Yet Another On-line Bank ### -->
+To deploy this demo application follow the steps below:
+
+1. **Have a kubernetes cluster up and running with sufficient capacity** to support this application. :)
+
+2. **Clone this repository**
+
+```bash
+git clone https://github.com/regismartins/demo-apps
+cd demo-apps/onlineboutique
+```
+
+3. **Deploy the sample application to the cluster.**
+
+```bash
+kubectl apply -f onlineboutique.yaml
+```
+
+4. **Wait for the pods to be ready** 
+
+```bash
+kubectl get -n onlineboutique pods
+```
+
+After a few minutes, you shoudl see:
+
+```bash
+NAME                                     READY   STATUS    RESTARTS   AGE
+adservice-8d6675769-x5t69                1/1     Running   0          21m
+cartservice-848976c565-9ql72             1/1     Running   0          21m
+checkoutservice-6898f55469-pj9x7         1/1     Running   0          21m
+currencyservice-674f46f579-6xsqg         1/1     Running   0          21m
+emailservice-5dbfd5fdb5-qfjmw            1/1     Running   0          21m
+frontend-78dcf586d4-62sk4                1/1     Running   0          21m
+loadgenerator-6549dbbb8b-hkx5s           1/1     Running   0          21m
+paymentservice-59dbf5ff58-776v4          1/1     Running   0          21m
+productcatalogservice-67dcbcbfcd-tmm2s   1/1     Running   0          21m
+recommendationservice-55b469945b-s2khp   1/1     Running   0          21m
+redis-cart-6f65887b5d-8hkgm              1/1     Running   0          21m
+shippingservice-8669dfbcdb-kblbw         1/1     Running   0          21m
+```
+
+5. **Access the webserver in a browser** using the webserver's EXTERNAL_IP.
+
+```bash
+kubectl get -n onlineboutique service frontend-external | awk '{print $4}'
+``` 
+
+**Example output - do not copy**
+
+```bash
+EXTERNAL-IP
+<your-ip>
+```
+
+**Note**-  you may see `<pending>` while the cloud provider provisions the load balancer. If this happens, wait a few minutes and re-run the command.
+
+[Optional] **Clean up**:
+
+```bash
+kubectl delete -f onlineboutique.yaml
+```
+
+<!-- ### Robotshop ### -->
 
 
 ## Robot Shop
