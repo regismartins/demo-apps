@@ -186,7 +186,7 @@ You can find more information at the offical project [github repository](https:/
 
 The diagram below shows the objects of the yet another online bank environment.
 
-
+![onlineboutique](https://user-images.githubusercontent.com/104035488/177209387-800f9db2-eae3-47a5-95b4-40a0f7caf09f.png)
 
 To deploy this demo application follow the steps below:
 
