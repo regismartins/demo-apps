@@ -3,10 +3,10 @@
 
 This repository brings **all-in-one-yaml** files to deploy some of the most popular microservices applications used for demo purposes:
 
-> - [**Simple Development Environment**](README.md/#yet-another-on-line-bank-yaobank)
-> - [**Yet Another Online Bank**](README.md/#yet-another-on-line-bank-yaobank)
-> - [**Online Boutique**](README.md/#yet-another-on-line-bank-yaobank)
-> - [**Robotshop**](README.md/#yet-another-on-line-bank-yaobank)
+> - [**Simple Development Environment**](README.md#yet-another-on-line-bank-yaobank)
+> - [**Yet Another Online Bank**](/README.md#yet-another-on-line-bank-yaobank)
+> - [**Online Boutique**](README.md#yet-another-on-line-bank-yaobank)
+> - [**Robotshop**](README.md#yet-another-on-line-bank-yaobank)
 
 ## Quickstart
 
@@ -291,25 +291,26 @@ kubectl get -n robotshop pods
 After a few minutes, you shoudl see:
 
 ```bash
-NAME                                     READY   STATUS    RESTARTS   AGE
-adservice-8d6675769-x5t69                1/1     Running   0          21m
-cartservice-848976c565-9ql72             1/1     Running   0          21m
-checkoutservice-6898f55469-pj9x7         1/1     Running   0          21m
-currencyservice-674f46f579-6xsqg         1/1     Running   0          21m
-emailservice-5dbfd5fdb5-qfjmw            1/1     Running   0          21m
-frontend-78dcf586d4-62sk4                1/1     Running   0          21m
-loadgenerator-6549dbbb8b-hkx5s           1/1     Running   0          21m
-paymentservice-59dbf5ff58-776v4          1/1     Running   0          21m
-productcatalogservice-67dcbcbfcd-tmm2s   1/1     Running   0          21m
-recommendationservice-55b469945b-s2khp   1/1     Running   0          21m
-redis-cart-6f65887b5d-8hkgm              1/1     Running   0          21m
-shippingservice-8669dfbcdb-kblbw         1/1     Running   0          21m
+NAME                         READY   STATUS    RESTARTS   AGE
+cart-d68b689cc-xwzmt         1/1     Running   0          97s
+catalogue-665bd584fd-htxtf   1/1     Running   0          97s
+dispatch-765c9c7788-628x4    1/1     Running   0          96s
+load-856c7d54bb-b5g2p        1/1     Running   0          93s
+mongodb-7755d57bd6-gvn4n     1/1     Running   0          96s
+mysql-fbfdb4f58-xm5ft        1/1     Running   0          96s
+payment-6b99fb896b-9hfjb     1/1     Running   0          95s
+rabbitmq-75d9cf4484-mjdht    1/1     Running   0          95s
+ratings-856f484fc-x6cr4      1/1     Running   0          95s
+redis-5f4f5c5f97-x5x8v       1/1     Running   0          95s
+shipping-56ff6d5d66-hnfk7    1/1     Running   0          94s
+user-5865575fd-mh5vs         1/1     Running   0          94s
+web-7998c9d5c7-4bfb6         1/1     Running   0          94s
 ```
 
 5. **Access the webserver in a browser** using the webserver's EXTERNAL_IP.
 
 ```bash
-kubectl get -n onlineboutique service frontend-external | awk '{print $4}'
+kubectl get -n robotshop service web | awk '{print $4}'
 ``` 
 
 **Example output - do not copy**
@@ -324,9 +325,8 @@ EXTERNAL-IP
 [Optional] **Clean up**:
 
 ```bash
-kubectl delete -f onlineboutique.yaml
+kubectl delete -f robotshop.yaml
 ```
-
 
 
 <!-- Links -->
