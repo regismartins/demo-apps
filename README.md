@@ -3,10 +3,10 @@
 
 This repository brings **all-in-one-yaml** files to deploy some of the most popular microservices applications used for demo purposes:
 
-> - [**Simple Development Environment**](README.md#yet-another-on-line-bank-yaobank)
+> - [**Simple Development Environment**](/README.md#simple-development-environment)
 > - [**Yet Another Online Bank**](/README.md#yet-another-on-line-bank-yaobank)
-> - [**Online Boutique**](README.md#yet-another-on-line-bank-yaobank)
-> - [**Robotshop**](README.md#yet-another-on-line-bank-yaobank)
+> - [**Online Boutique**](README.md#online-boutique)
+> - [**Robot Shop**](README.md#robot-shop)
 
 ## Quickstart
 
