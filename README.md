@@ -1,3 +1,5 @@
+![demo-apps](https://user-images.githubusercontent.com/104035488/177212948-21ceaf80-d00f-4a79-8eac-c498efb7c9a4.png)
+
 # Microservices Demo Applications
 [![Tigera][tigera.io-badge]][tigera.io] 
 
@@ -263,7 +265,7 @@ You can find more information at the offical project [github repository](https:/
 
 The diagram below shows the objects of the yet another online bank environment.
 
-
+![robotshop](https://user-images.githubusercontent.com/104035488/177212970-c83f5fe2-1573-48cd-b74c-eb8e6580834b.png)
 
 To deploy this demo application follow the steps below:
 
