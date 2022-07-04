@@ -328,7 +328,6 @@ EXTERNAL-IP
 kubectl delete -f robotshop.yaml
 ```
 
-/README.md#microservices-demo-applications
 
 ---
 
